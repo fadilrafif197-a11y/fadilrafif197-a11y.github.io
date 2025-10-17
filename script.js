@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Smooth Scroll untuk Navigasi
+    // 1. Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 2. Active State di Navigasi saat Scroll
+    // 2. Nav Active State saat Scroll
     const sections = document.querySelectorAll('section, header[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -20,8 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
         let current = '';
         
         sections.forEach(section => {
+            // Menggunakan section.offsetTop untuk menemukan posisi awal setiap bagian
             const sectionTop = section.offsetTop;
-            // Menggunakan tinggi 150px untuk offset agar link aktif sebelum mencapai bagian paling atas
+            
+            // Set offset (150px) agar link aktif sedikit sebelum mencapai bagian paling atas
             if (window.scrollY >= sectionTop - 150) {
                 current = section.getAttribute('id');
             }
@@ -29,13 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         navLinks.forEach(a => {
             a.classList.remove('active');
+            // Menambahkan kelas 'active' jika href link cocok dengan ID bagian saat ini
             if (a.getAttribute('href').includes(current)) {
                 a.classList.add('active');
             }
         });
     });
-
-    // Tambahkan style untuk active state di CSS
-    // .nav-links a.active { color: #333; background-color: #ffd300; border-radius: 4px; padding: 0 5px; }
-    // atau gaya lain yang Anda inginkan
+    
+    // **Tambahkan style 'active' di CSS untuk melihat efeknya!**
+    // Contoh di CSS:
+    // .nav-links a.active { color: var(--color-primary); }
 });
