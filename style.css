@@ -1,124 +1,73 @@
-/* ======================== */
-/* 1. Global Reset & Utilities */
-/* ======================== */
+/* Custom Properties */
 :root {
-    --color-primary: #4CAF50; /* Green */
-    --color-secondary: #ff9800; /* Orange */
-    --color-dark: #212121;
-    --color-light: #f5f5f5;
-    --color-text: #ffffff;
-    --color-bg-dark: #121212;
-    --color-bg-light: #1e1e1e;
-    --transition: all 400ms ease;
+    --color-primary: #FFD300; /* Kuning */
+    --color-text-dark: #333333;
+    --color-text-light: #ffffff;
+    --color-bg-white: #ffffff;
+    --color-bg-grey: #f5f5f5; /* Untuk bagian lain selain hero */
+    --font-family: 'Poppins', sans-serif;
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
 }
 
+/* Global Reset and Utilities */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background: var(--color-bg-dark);
-    color: var(--color-text);
+    font-family: var(--font-family);
     line-height: 1.6;
+    background-color: var(--color-bg-yellow); /* Background halaman keseluruhan */
+    color: var(--color-text-dark);
 }
 
 a {
-    color: var(--color-primary);
     text-decoration: none;
+    color: var(--color-text-dark);
     transition: var(--transition);
-}
-
-a:hover {
-    color: var(--color-secondary);
 }
 
 ul {
     list-style: none;
 }
 
-h1, h2, h3 {
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-/* Reusable Container */
 .container {
-    width: 90%;
     max-width: 1200px;
+    width: 90%;
     margin: 0 auto;
 }
 
-/* Reusable Buttons */
-.btn-primary, .btn-secondary {
-    display: inline-block;
-    padding: 0.75rem 2rem;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: var(--transition);
+.section-title {
     text-align: center;
-    border: 1px solid transparent;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    color: var(--color-text-dark);
 }
 
-.btn-primary {
-    background: var(--color-primary);
-    color: var(--color-dark);
-    font-weight: 600;
-}
-
-.btn-primary:hover {
-    background: transparent;
-    color: var(--color-primary);
-    border-color: var(--color-primary);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--color-primary);
-    border-color: var(--color-primary);
-    font-weight: 500;
-}
-
-.btn-secondary:hover {
-    background: var(--color-primary);
-    color: var(--color-dark);
+section {
+    padding: 6rem 0;
 }
 
 /* ======================== */
-/* 2. Navigation */
+/* Navigation Bar */
 /* ======================== */
-nav {
-    background: var(--color-bg-dark);
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.hero-section nav {
+    padding: 2.5rem 0;
 }
 
 .logo {
     font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-primary);
+    font-weight: 800;
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
-}
-
-.nav-links a {
-    color: var(--color-light);
-    font-weight: 500;
+    gap: 2.5rem;
+    font-weight: 600;
 }
 
 .nav-links a:hover {
@@ -126,247 +75,319 @@ nav {
 }
 
 /* ======================== */
-/* 3. Header/Hero */
+/* Hero Section (Split Layout) */
 /* ======================== */
-header {
-    padding: 6rem 0;
-    text-align: center;
-    background: var(--color-bg-light);
+.hero-section {
+    min-height: 100vh;
+    padding-bottom: 0;
+    background-color: var(--color-primary); /* Bagian luar kuning */
 }
 
-.header-content {
+.hero-content {
+    display: flex;
+    background-color: var(--color-bg-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    position: relative;
+    z-index: 50;
+    margin-top: -60px; /* Tarik ke atas agar nav terintegrasi */
+    min-height: 80vh;
+}
+
+/* --- Left Side (Text) --- */
+.hero-text {
+    flex: 1;
+    padding: 6rem 5rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+    justify-content: center;
+    gap: 1.2rem;
 }
 
-.profile-pic {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid var(--color-primary);
-    box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+.role {
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    color: #888;
 }
 
-header h1 {
-    font-size: 3rem;
+.hero-text h2 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.description {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 1rem;
+    max-width: 450px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    padding: 0.7rem 1.8rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    border: 2px solid transparent;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-dark);
+    border-color: var(--color-primary);
+}
+
+.btn-secondary {
+    background-color: var(--color-bg-white);
+    color: var(--color-text-dark);
+    border-color: var(--color-text-dark);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-bg-white);
     color: var(--color-primary);
+    border-color: var(--color-primary);
 }
 
-header p {
-    font-size: 1.2rem;
-    color: var(--color-light);
+.btn-secondary:hover {
+    background-color: var(--color-text-dark);
+    color: var(--color-bg-white);
 }
 
-/* Adjusting the image added outside the header for better styling */
-head p[align="center"] {
-    display: block; /* Ensure it takes up its own space */
-    text-align: center;
-    padding: 2rem 0 0; /* Add some space at the top */
-    background: var(--color-bg-dark);
+/* --- Right Side (Image & Shape) --- */
+.hero-image-container {
+    flex: 1;
+    position: relative;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Penting untuk menjaga shape tetap di dalam container */
 }
 
-head img {
-    border-radius: 50%;
-    border: 3px solid var(--color-secondary);
+.hero-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    object-fit: cover;
+    z-index: 60;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(10%); /* Geser sedikit ke bawah agar terlihat lebih dinamis */
+}
+
+.organic-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    fill: var(--color-bg-white);
+    z-index: 55;
+    /* Transformasi untuk memposisikan dan memutar bentuk agar memotong sudut */
+    transform: translate(-30%, -10%) rotate(-30deg) scale(1.5);
+    transform-origin: bottom right;
 }
 
 /* ======================== */
-/* 4. Sections */
-/* ======================== */
-section {
-    padding: 4rem 0;
-    border-bottom: 1px solid var(--color-bg-light);
-}
-
-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: var(--color-secondary);
-    margin-bottom: 3rem;
-}
-
 /* About Section */
-.about-section p {
+/* ======================== */
+.about-section {
+    background-color: var(--color-bg-grey);
+}
+
+.about-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
     font-size: 1.1rem;
+    color: #444;
 }
 
-/* Skills Section */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
+.about-content p {
+    margin-bottom: 1.5rem;
 }
 
-.skill {
-    background: var(--color-bg-light);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.skill-name {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--color-primary);
-}
-
-.skill-bar {
-    background: var(--color-dark);
-    border-radius: 10px;
-    height: 10px;
-    overflow: hidden;
-}
-
-.skill-level {
-    height: 100%;
-    background: var(--color-primary);
-    border-radius: 10px;
-}
-
-/* Skill levels - **You can adjust the percentages here** */
-.skill-level.html {
-    width: 90%;
-}
-
-.skill-level.css {
-    width: 85%;
-}
-
+/* ======================== */
 /* Projects Section */
+/* ======================== */
+.projects-section {
+    background-color: var(--color-bg-white);
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
-.project-item {
-    background: var(--color-bg-light);
+.project-card {
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: var(--color-bg-grey);
+    border-radius: var(--border-radius);
     border-top: 5px solid var(--color-primary);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.project-item h3 {
-    color: var(--color-light);
+.project-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
 }
 
-.project-item p {
-    color: #ccc;
-    margin-bottom: 1.5rem;
+.project-card p {
+    color: #666;
+    margin-bottom: 1rem;
 }
 
+.project-link {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* ======================== */
 /* Contact Section */
+/* ======================== */
+.contact-section {
+    background-color: var(--color-primary);
+}
+
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-}
-
-.contact-form label {
-    font-weight: 500;
-    color: var(--color-primary);
+    padding: 2rem;
+    background-color: var(--color-bg-white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form input,
 .contact-form textarea {
-    padding: 0.75rem;
-    border: 1px solid var(--color-dark);
-    border-radius: 4px;
-    background: var(--color-dark);
-    color: var(--color-text);
-    resize: vertical;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: var(--font-family);
+    font-size: 1rem;
 }
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: #9e9e9e;
+.contact-form textarea {
+    resize: vertical;
 }
 
 .contact-form button {
     align-self: flex-start;
+    margin-top: 1rem;
 }
 
 /* ======================== */
-/* 5. Footer */
+/* Footer */
 /* ======================== */
 footer {
-    background: var(--color-dark);
-    padding: 1.5rem 0;
+    background-color: var(--color-text-dark);
+    padding: 2rem 0;
+    color: var(--color-text-light);
     text-align: center;
 }
 
-.footer-container {
+.footer-content {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
 }
 
-.footer-container p {
-    color: var(--color-light);
+.footer-content p {
+    font-size: 0.9rem;
+    color: #bbb;
 }
 
 .social-links a {
+    color: var(--color-text-light);
     font-size: 1.5rem;
-    margin: 0 0.5rem;
-    padding: 0.5rem;
-    color: var(--color-light);
+    margin-left: 1rem;
 }
 
 .social-links a:hover {
     color: var(--color-primary);
-    transform: scale(1.1);
 }
 
+
 /* ======================== */
-/* 6. Media Queries (Responsiveness) */
+/* Responsiveness (Mobile) */
 /* ======================== */
-@media screen and (max-width: 768px) {
-    /* Header */
-    header h1 {
+@media screen and (max-width: 992px) {
+    .hero-content {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    /* Teks dan Tombol */
+    .hero-text {
+        order: 2; /* Pindah teks ke bawah */
+        padding: 4rem 1.5rem;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-text h2 {
         font-size: 2.5rem;
     }
 
-    /* Navigation */
-    .nav-links {
-        display: none; /* Hide navigation links on small screens */
+    .description {
+        text-align: center;
+        max-width: 100%;
     }
 
-    /* Add a hamburger icon and toggle for a real project */
+    /* Gambar dan Bentuk Organik */
+    .hero-image-container {
+        order: 1; /* Pindah gambar ke atas */
+        min-height: 400px;
+        background-color: var(--color-primary);
+        padding: 3rem 1.5rem 0;
+    }
     
-    .nav-container {
-        justify-content: center;
+    .organic-shape {
+        display: none; /* Hilangkan bentuk organik pada mobile */
+    }
+
+    .hero-image {
+        max-width: 300px;
+        transform: translateY(0);
+    }
+    
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
     }
 }
 
-@media screen and (max-width: 480px) {
-    /* Global */
-    section {
-        padding: 3rem 0;
-    }
-
-    section h2 {
+@media screen and (max-width: 576px) {
+    .hero-text h2 {
         font-size: 2rem;
     }
-    
-    /* Header */
-    .profile-pic {
-        width: 150px;
-        height: 150px;
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
     }
-
-    header h1 {
-        font-size: 2rem;
+    .btn {
+        width: 100%;
+    }
+    .nav-links {
+        display: none; /* Sembunyikan link nav pada mobile sangat kecil */
     }
 }
