@@ -1,70 +1,243 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio Saya</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nama Kamu — Portofolio</title>
+  <meta name="description" content="Portofolio Nama Kamu — Designer & Developer (tanpa JS)" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- favicon (opsional): letakkan favicon.ico di folder yang sama -->
 </head>
 <body>
-  <header>
-    <nav>
-      <h1>Fadil Rafif Al Azzam</h1>
-      <ul>
-        <li><a href="#about">Tentang Saya</a></li>
-        <li><a href="#projects">Proyek</a></li>
-        <li><a href="#contact">Kontak</a></li>
-      </ul>
-    </nav>
+  <a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#hero">Nama Kamu</a>
+
+      <!-- dark mode toggle tanpa JS (checkbox hack) -->
+      <input id="theme-toggle" class="theme-toggle" type="checkbox" aria-label="Toggle theme">
+      <label for="theme-toggle" class="theme-toggle-label" title="Mode gelap/terang">
+        <span class="sun">☀️</span><span class="moon">🌙</span>
+      </label>
+
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="cta" href="#contact">Hire me</a>
+    </div>
   </header>
 
-  <section id="hero">
-    <div class="hero-text">
-      <h2>Hai, Saya <span>Fadil Rafif Al Azzam</span></h2>
-      <p>Seorang Developer Web | Programmer | Designer</p>
-      <a href="#projects" class="btn">Lihat Proyek Saya</a>
+  <main id="main">
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Halo, saya <span class="accent">Nama Kamu</span></h1>
+          <p class="lead">Saya membuat desain antarmuka dan situs web yang cepat, responsif, dan mudah dipelihara — seluruhnya tanpa JavaScript.</p>
+          <p class="hero-actions">
+            <a class="btn primary" href="#projects">Lihat Project</a>
+            <a class="btn outline" href="#contact">Kontak</a>
+          </p>
+        </div>
+        <figure class="hero-card" aria-hidden="true">
+          <div class="card-visual">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#6C63FF"/><stop offset="1" stop-color="#00C2FF"/></linearGradient>
+              </defs>
+              <circle cx="60" cy="60" r="56" fill="url(#g1)"></circle>
+            </svg>
+          </div>
+          <figcaption>
+            <h3>UI / Frontend & CSS Artisan</h3>
+            <p>Fokus pada aksesibilitas, performa, dan detail visual.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container">
+        <h2>About</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>Saya seorang <strong>UI/Frontend Developer</strong> yang menyukai desain bersih, tipografi kuat, dan animasi halus — semua dibuat hanya dengan HTML & CSS. Saya juga memperhatikan SEO dan performa untuk pengalaman pengguna yang cepat.</p>
+            <ul class="meta">
+              <li><strong>Lokasi:</strong> Kota, Negara</li>
+              <li><strong>Email:</strong> <a href="mailto:email@contoh.com">email@contoh.com</a></li>
+              <li><strong>Peran:</strong> Freelancer / Full-time</li>
+            </ul>
+          </div>
+          <div class="about-stats">
+            <div class="stat">
+              <h3>8+</h3><p>Tahun pengalaman</p>
+            </div>
+            <div class="stat">
+              <h3>50+</h3><p>Project selesai</p>
+            </div>
+            <div class="stat">
+              <h3>100%</h3><p>Responsive</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <p class="section-lead">Beberapa proyek pilihan — klik untuk melihat detail (tanpa JS, menggunakan <code>:target</code> untuk detail).</p>
+
+        <div class="projects-grid">
+          <!-- Project card 1 -->
+          <article class="project-card" id="p1">
+            <a class="project-link" href="#p1">
+              <div class="project-thumb" role="img" aria-label="Project Alpha">
+                <span class="proj-badge">Web</span>
+              </div>
+              <div class="project-body">
+                <h3>Project Alpha</h3>
+                <p>Website marketing minimal & performa tinggi.</p>
+              </div>
+            </a>
+            <a class="project-more" href="#p1-modal">Lihat detail</a>
+          </article>
+
+          <!-- Project card 2 -->
+          <article class="project-card" id="p2">
+            <a class="project-link" href="#p2">
+              <div class="project-thumb" role="img" aria-label="Project Beta">
+                <span class="proj-badge">App</span>
+              </div>
+              <div class="project-body">
+                <h3>Project Beta</h3>
+                <p>Design system dan dokumentasi komponen.</p>
+              </div>
+            </a>
+            <a class="project-more" href="#p2-modal">Lihat detail</a>
+          </article>
+
+          <!-- Project card 3 -->
+          <article class="project-card" id="p3">
+            <a class="project-link" href="#p3">
+              <div class="project-thumb" role="img" aria-label="Project Gamma">
+                <span class="proj-badge">Ecom</span>
+              </div>
+              <div class="project-body">
+                <h3>Project Gamma</h3>
+                <p>Toko online cepat & SEO-friendly.</p>
+              </div>
+            </a>
+            <a class="project-more" href="#p3-modal">Lihat detail</a>
+          </article>
+        </div>
+
+        <!-- Modal-like sections using :target (no JS) -->
+        <div id="p1-modal" class="modal">
+          <div class="modal-inner">
+            <a class="modal-close" href="#projects" aria-label="Tutup">✕</a>
+            <h3>Project Alpha — Website Marketing</h3>
+            <p>Rincian: Desain cepat, gambar teroptimasi, Hero responsive, formulir sederhana menggunakan mailto atau backend form. Teknologi: HTML & CSS (no-JS), optimalisasi gambar, preconnect, dan lazy-loading gambar bila perlu.</p>
+            <p><strong>Peran:</strong> Desain UI, Frontend, Deployment</p>
+            <p><a class="btn" href="https://example.com" target="_blank" rel="noopener">Lihat live</a></p>
+          </div>
+        </div>
+
+        <div id="p2-modal" class="modal">
+          <div class="modal-inner">
+            <a class="modal-close" href="#projects" aria-label="Tutup">✕</a>
+            <h3>Project Beta — Design System</h3>
+            <p>Rincian: Komponen berbasis CSS variables dan Utility classes, dokumentasi yang mudah dibaca, dan contoh penggunaan tanpa JS.</p>
+          </div>
+        </div>
+
+        <div id="p3-modal" class="modal">
+          <div class="modal-inner">
+            <a class="modal-close" href="#projects" aria-label="Tutup">✕</a>
+            <h3>Project Gamma — E-Commerce</h3>
+            <p>Rincian: Checkout ringkas dengan server-side processing, optimisasi SEO dan struktur data (schema.org) untuk produk.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section skills">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skill-grid">
+          <div class="skill">
+            <h4>HTML &amp; Semantik</h4>
+            <div class="skill-bar" style="--val:95%"><span>95%</span></div>
+          </div>
+          <div class="skill">
+            <h4>CSS Modern (Grid, Flex, Anim)</h4>
+            <div class="skill-bar" style="--val:92%"><span>92%</span></div>
+          </div>
+          <div class="skill">
+            <h4>Responsive & Accessibility</h4>
+            <div class="skill-bar" style="--val:90%"><span>90%</span></div>
+          </div>
+          <div class="skill">
+            <h4>Performance & SEO</h4>
+            <div class="skill-bar" style="--val:88%"><span>88%</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="section-lead">Tertarik bekerja sama? Kirim email atau isi formulir sederhana (mailto).</p>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Pesan Cepat</h3>
+            <form class="contact-form" action="mailto:email@contoh.com" method="post" enctype="text/plain">
+              <label>
+                Nama
+                <input type="text" name="Nama" required>
+              </label>
+              <label>
+                Email
+                <input type="email" name="Email" required>
+              </label>
+              <label>
+                Pesan
+                <textarea name="Pesan" rows="5" required></textarea>
+              </label>
+              <p class="form-actions">
+                <button class="btn primary" type="submit">Kirim</button>
+                <button class="btn outline" type="reset">Reset</button>
+              </p>
+            </form>
+          </div>
+          <div class="contact-info">
+            <h3>Info lainnya</h3>
+            <ul>
+              <li>Email: <a href="mailto:email@contoh.com">email@contoh.com</a></li>
+              <li>LinkedIn: <a href="#">linkedin.com/in/username</a></li>
+              <li>GitHub: <a href="#">github.com/username</a></li>
+            </ul>
+            <p>Atau langsung kirim pesan lewat email — saya akan balas secepatnya.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Nama Kamu. Dibuat dengan ❤️ — tanpa JavaScript.</p>
+      <p class="small">Tip: update file <code>index.html</code> dengan tahun atau gunakan build step untuk otomatisasi jika diperlukan.</p>
     </div>
-  </section>
-
-  <section id="about">
-    <h2>Tentang Saya</h2>
-    <p>
-      Saya adalah developer web yang bersemangat dalam membangun aplikasi yang bersih dan fungsional.
-      Memiliki pengalaman dalam HTML, CSS, JavaScript, dan framework modern.
-    </p>
-  </section>
-
-  <section id="projects">
-    <h2>Proyek Saya</h2>
-    <div class="project-list">
-      <div class="project-item">
-        <h3>Proyek 1</h3>
-        <p>Deskripsi singkat proyek 1.</p>
-        <a href="https://github.com/username/proyek1" target="_blank">Lihat di GitHub</a>
-      </div>
-      <div class="project-item">
-        <h3>Proyek 2</h3>
-        <p>Deskripsi singkat proyek 2.</p>
-        <a href="https://github.com/username/proyek2" target="_blank">Lihat di GitHub</a>
-      </div>
-      <div class="project-item">
-        <h3>Proyek 3</h3>
-        <p>Deskripsi singkat proyek 3.</p>
-        <a href="https://github.com/username/proyek3" target="_blank">Lihat di GitHub</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Kontak</h2>
-    <p>Email: <a href="mailto:emailkamu@example.com">emailkamu@example.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/username" target="_blank">linkedin.com/in/username</a></p>
-    <p>GitHub: <a href="https://github.com/username" target="_blank">github.com/username</a></p>
-  </section>
-
-  <footer>
-    <p>© 2025 Nama Kamu. All rights reserved.</p>
   </footer>
+
+  <!-- small inline script only for year placeholder is NOT allowed per request, so we left static note.
+       If ingin menampilkan tahun dinamis TANPA JS, tulis manual di HTML. -->
+
 </body>
 </html>
