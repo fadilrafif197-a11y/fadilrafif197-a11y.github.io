@@ -1,116 +1,101 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfolio Lengkap - Fadil Rafif Al Azzam</title>
-    <link rel="stylesheet" href="style.css" />
-    <p align="center">
-  <img src="https://github.com/username/reponame/blob/main/Fadil%20Rafif%20Al%20Azzam.png" width="250" alt="Fadil Rafif Al Azzam"/>
-</p>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Madelyn Torff</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <nav>
-        <div class="container nav-container">
-            <a href="#home" class="logo">PortfolioKu</a>
-            <ul class="nav-links">
-                <li><a href="#home">Beranda</a></li>
-                <li><a href="#about">Tentang</a></li>
-                <li><a href="#skills">Keahlian</a></li>
-                <li><a href="#projects">Proyek</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <header id="home">
-        <div class="container header-content">
-            <img src="images/foto.jpg" alt="Foto Saya" class="profile-pic" />
-            <h1>Halo, Saya Fadil Rafif Al Azzam</h1>
-            <p>Web Developer </p>
-            <a href="#contact" class="btn-primary">Hubungi Saya</a>
+    <header id="home" class="hero-section">
+        <nav class="container">
+            <h1 class="logo">Madelyn Torff</h1>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contacts</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-content container">
+            <div class="hero-text">
+                <p class="role">UI/UX DESIGNER</p>
+                <h2>Hello, my name is <span class="name-highlight">Madelyn Torff</span></h2>
+                <p class="description">
+                    Short text with details about you, what you do or your professional career. You can add more information on the about page.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Projects</a>
+                    <a href="https://linkedin.com" target="_blank" class="btn btn-secondary">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="hero-image-container">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1588&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Madelyn Torff" class="hero-image">
+                <svg viewBox="0 0 500 500" class="organic-shape">
+                    <path d="M495.5,249.5c0,135-109.5,244.5-244.5,244.5S6.5,384.5,6.5,249.5C6.5,134.5,225.5-125.5,495.5,249.5Z" transform="translate(0, 0) rotate(50, 250, 250) scale(1.1)"></path>
+                </svg>
+            </div>
         </div>
     </header>
 
-    <section id="about" class="container about-section">
-        <h2>Tentang Saya</h2>
-        <p>
-            Saya seorang web developer yang berpengalaman dengan kemampuan dalam membangun website modern, responsif, dan menarik. Saya bersemangat menggabungkan teknologi terbaru dan desain kreatif untuk memberikan solusi terbaik.
-        </p>
+    <section id="about" class="about-section container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p>I am a passionate UI/UX Designer with 5 years of experience in creating intuitive and aesthetically pleasing digital products. My focus is on user-centered design, ensuring every pixel serves a purpose and enhances the user experience.</p>
+            <p>I specialize in **Figma, Sketch, Prototyping, and Design Systems**. I love turning complex problems into simple, beautiful, and functional solutions.</p>
+        </div>
     </section>
 
-    <section id="skills" class="container skills-section">
-        <h2>Keahlian Saya</h2>
-        <div class="skills-grid">
-            <div class="skill">
-                <div class="skill-name">HTML</div>
-                <div class="skill-bar">
-                    <div class="skill-level html"></div>
-                </div>
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Latest Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <h3>E-commerce App Redesign</h3>
+                    <p>Revamping a large online retail platform, leading to a 40% increase in conversion rates.</p>
+                    <a href="#" class="project-link">View Case Study &rarr;</a>
+                </article>
+                <article class="project-card">
+                    <h3>Fintech Dashboard</h3>
+                    <p>Designed a secure and complex financial management dashboard for enterprise users.</p>
+                    <a href="#" class="project-link">View Prototype &rarr;</a>
+                </article>
+                <article class="project-card">
+                    <h3>Mobile Game Interface</h3>
+                    <p>Created engaging and dynamic UI for a mobile puzzle game, enhancing player retention.</p>
+                    <a href="#" class="project-link">View Live Demo &rarr;</a>
+                </article>
             </div>
-            <div class="skill">
-                <div class="skill-name">CSS</div>
-                <div class="skill-bar">
-                    <div class="skill-level css"></div>
-                </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <form action="https://formspree.io/f/yourformid" method="POST" class="contact-form">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="_replyto" placeholder="Your Email" required>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2024 Madelyn Torff. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://dribbble.com" target="_blank" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
             </div>
         </div>
-    </section>
+    </footer>
 
-    <section id="projects" class="container projects-section">
-        <h2>Proyek Saya</h2>
-        <div class="projects-grid">
-            <article class="project-item">
-                <h3>Website Toko Online</h3>
-                <p>Membangun platform e-commerce lengkap dengan fitur pembayaran dan katalog produk.</p>
-                <a href="#" class="btn-secondary">Lihat Proyek</a>
-            </article>
-            <article class="project-item">
-                <h3>Aplikasi ToDo List</h3>
-                <p>Aplikasi manajemen tugas harian dengan penyimpanan data lokal.</p>
-                <a href="#" class="btn-secondary">Lihat Proyek</a>
-            </article>
-        </div>
-    </section>
-
-    <section id="contact" class="container contact-section">
-        <h2>Kontak Saya</h2>
-        <form action="https://formspree.io/f/yourformid" method="POST" class="contact-form">
-            <label for="name">Nama</label>
-            <input type="text" id="name" name="name" required placeholder="Masukkan nama kamu" />
-
-            <label for="email">Email</label>
-            <input type="email" id="email" name="_replyto" required placeholder="email@example.com" />
-
-            <label for="message">Pesan</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Tulis pesan kamu di sini..."></textarea>
-
-            <button type="submit" class="btn-primary">Kirim</button>
-        </form>
-    </section>
-
-   <footer>
-    <div class="container footer-container">
-        <p>© 2025 Cihuyyyy</p>
-        <div class="social-links">
-            <a href="https://instagram.com/username_ig" target="_blank" rel="noopener" aria-label="Instagram">📸</a>
-            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="WhatsApp">📱</a>
-            <a href="https://t.me/username_telegram" target="_blank" rel="noopener" aria-label="Telegram">✈️</a>
-        </div>
-    </div>
-</footer>
-
-
-    <script>
-      // Smooth scroll untuk navigasi
-      document.querySelectorAll('nav a').forEach(anchor => {
-          anchor.addEventListener('click', function(e) {
-              e.preventDefault();
-              const targetId = this.getAttribute('href').substring(1);
-              document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-          });
-      });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
