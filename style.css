@@ -1,10 +1,10 @@
 /* Custom Properties */
 :root {
-    --color-primary: #FFD300; /* Kuning */
-    --color-text-dark: #333333;
+    --color-primary: #FFD300; /* Kuning Cerah */
+    --color-text-dark: #2c2c2c;
     --color-text-light: #ffffff;
     --color-bg-white: #ffffff;
-    --color-bg-grey: #f5f5f5; /* Untuk bagian lain selain hero */
+    --color-bg-grey: #f7f7f7; 
     --font-family: 'Poppins', sans-serif;
     --border-radius: 12px;
     --transition: all 0.3s ease;
@@ -20,8 +20,8 @@
 body {
     font-family: var(--font-family);
     line-height: 1.6;
-    background-color: var(--color-bg-yellow); /* Background halaman keseluruhan */
-    color: var(--color-text-dark);
+    background-color: var(--color-primary); /* Background Halaman Luar Kuning */
+    padding: 50px 0; /* Padding vertikal agar body kuning terlihat */
 }
 
 a {
@@ -35,153 +35,148 @@ ul {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1100px; /* Lebar yang sedikit lebih kecil */
     width: 90%;
     margin: 0 auto;
 }
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
-    font-weight: 800;
+    font-size: 2.2rem;
+    font-weight: 700;
     margin-bottom: 3rem;
-    color: var(--color-text-dark);
 }
 
 section {
-    padding: 6rem 0;
+    padding: 5rem 0;
 }
 
 /* ======================== */
-/* Navigation Bar */
+/* Main Wrapper (Shadow Luar) */
 /* ======================== */
+.main-wrapper {
+    background-color: var(--color-bg-white);
+    max-width: 1400px;
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Penting untuk menjaga bentuk hero tetap di dalam */
+}
+
+/* ======================== */
+/* Header / Hero Section */
+/* ======================== */
+.hero-section {
+    min-height: 700px; /* Tinggi tetap hero */
+    position: relative;
+    background-color: var(--color-bg-white);
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Navigation Bar (Penempatan Persis di Template) --- */
 .hero-section nav {
-    padding: 2.5rem 0;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1100px;
+    z-index: 100; 
+    padding: 0; /* Override padding container */
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 800;
+    font-size: 1.2rem; /* Ukuran lebih kecil sesuai template */
+    font-weight: 700;
 }
 
 .nav-links {
-    display: flex;
-    gap: 2.5rem;
+    font-size: 0.9rem;
     font-weight: 600;
 }
 
-.nav-links a:hover {
-    color: var(--color-primary);
-}
-
-/* ======================== */
-/* Hero Section (Split Layout) */
-/* ======================== */
-.hero-section {
-    min-height: 100vh;
-    padding-bottom: 0;
-    background-color: var(--color-primary); /* Bagian luar kuning */
-}
-
+/* --- Hero Content (Split Layout) --- */
 .hero-content {
     display: flex;
-    background-color: var(--color-bg-white);
-    border-radius: var(--border-radius);
-    overflow: hidden;
     position: relative;
-    z-index: 50;
-    margin-top: -60px; /* Tarik ke atas agar nav terintegrasi */
-    min-height: 80vh;
+    height: 100%;
+    width: 100%;
 }
 
 /* --- Left Side (Text) --- */
 .hero-text {
-    flex: 1;
-    padding: 6rem 5rem;
+    flex: 60; /* Mengambil 60% ruang */
+    padding: 100px 50px 50px 100px; /* Padding kiri lebih besar */
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1.2rem;
+    padding-top: 150px; /* Dorong ke bawah dari nav */
 }
 
 .role {
-    font-weight: 600;
-    letter-spacing: 2px;
-    font-size: 0.9rem;
-    color: #888;
+    font-weight: 700; /* Lebih tebal */
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    color: #555;
+    margin-bottom: 0.5rem;
 }
 
 .hero-text h2 {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     line-height: 1.1;
     font-weight: 800;
+    margin-bottom: 1rem;
 }
 
 .description {
-    font-size: 1.05rem;
-    color: #555;
-    margin-bottom: 1rem;
-    max-width: 450px;
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 2rem;
+    max-width: 400px;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 1.5rem;
+    margin-top: 0;
 }
 
 .btn {
-    padding: 0.7rem 1.8rem;
-    border-radius: var(--border-radius);
-    font-weight: 600;
-    border: 2px solid transparent;
-    transition: var(--transition);
-    cursor: pointer;
+    padding: 0.7rem 1.5rem;
+    border-radius: 4px; /* Sudut lebih kotak */
+    font-size: 0.9rem;
 }
 
 .btn-primary {
-    background-color: var(--color-primary);
+    background-color: var(--color-bg-white);
     color: var(--color-text-dark);
-    border-color: var(--color-primary);
+    border: 1px solid var(--color-text-dark); /* Border hitam tipis */
 }
 
 .btn-secondary {
-    background-color: var(--color-bg-white);
-    color: var(--color-text-dark);
-    border-color: var(--color-text-dark);
+    background-color: var(--color-text-dark);
+    color: var(--color-bg-white);
+    border: 1px solid var(--color-text-dark);
 }
 
 .btn-primary:hover {
-    background-color: var(--color-bg-white);
-    color: var(--color-primary);
-    border-color: var(--color-primary);
+    background-color: var(--color-bg-grey);
 }
-
 .btn-secondary:hover {
-    background-color: var(--color-text-dark);
-    color: var(--color-bg-white);
+    background-color: #444;
 }
 
 /* --- Right Side (Image & Shape) --- */
 .hero-image-container {
-    flex: 1;
+    flex: 40; /* Mengambil 40% ruang */
     position: relative;
     background-color: var(--color-primary);
+    overflow: hidden;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Gambar agak ke kiri */
     align-items: center;
-    overflow: hidden; /* Penting untuk menjaga shape tetap di dalam container */
-}
-
-.hero-image {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    object-fit: cover;
-    z-index: 60;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transform: translateY(10%); /* Geser sedikit ke bawah agar terlihat lebih dinamis */
 }
 
 .organic-shape {
@@ -190,37 +185,50 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    fill: var(--color-bg-white);
-    z-index: 55;
-    /* Transformasi untuk memposisikan dan memutar bentuk agar memotong sudut */
-    transform: translate(-30%, -10%) rotate(-30deg) scale(1.5);
-    transform-origin: bottom right;
+    z-index: 5;
+    /* Transformasi SVG untuk menciptakan bentuk cairan */
+    transform: translate(-50%, -10%) rotate(5deg) scale(1.8);
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 450px; 
+    height: auto;
+    object-fit: cover;
+    z-index: 10; 
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    /* Penyesuaian posisi agar gambar berada di area kuning */
+    transform: translate(-10%, 15%); 
+}
+
+/* Penempatan navigasi di sisi kanan area kuning */
+.hero-section nav .nav-links {
+    margin-left: auto; /* Dorong ke kanan */
+    color: var(--color-text-dark);
+}
+.hero-section nav .logo {
+    color: var(--color-text-dark); 
 }
 
 /* ======================== */
-/* About Section */
+/* Sections Bawah (Sama seperti sebelumnya) */
 /* ======================== */
 .about-section {
-    background-color: var(--color-bg-grey);
+    background-color: var(--color-bg-white);
 }
 
 .about-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #444;
 }
+.about-content p { margin-bottom: 1rem; }
 
-.about-content p {
-    margin-bottom: 1.5rem;
-}
-
-/* ======================== */
-/* Projects Section */
-/* ======================== */
 .projects-section {
-    background-color: var(--color-bg-white);
+    background-color: var(--color-bg-grey);
 }
 
 .projects-grid {
@@ -231,37 +239,19 @@ section {
 
 .project-card {
     padding: 2rem;
-    background-color: var(--color-bg-grey);
-    border-radius: var(--border-radius);
-    border-top: 5px solid var(--color-primary);
+    background-color: var(--color-bg-white);
+    border-radius: 8px;
+    border-top: 3px solid var(--color-primary);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.project-card h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-.project-card p {
-    color: #666;
-    margin-bottom: 1rem;
-}
-
 .project-link {
-    font-weight: 600;
     color: var(--color-primary);
+    font-weight: 600;
 }
 
-.project-link:hover {
-    text-decoration: underline;
-}
-
-/* ======================== */
-/* Contact Section */
-/* ======================== */
 .contact-section {
-    background-color: var(--color-primary);
+    background-color: var(--color-bg-white);
 }
 
 .contact-form {
@@ -271,27 +261,21 @@ section {
     flex-direction: column;
     gap: 1rem;
     padding: 2rem;
-    background-color: var(--color-bg-white);
+    background-color: var(--color-bg-grey);
     border-radius: var(--border-radius);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form input,
 .contact-form textarea {
-    padding: 1rem;
+    padding: 0.8rem;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    font-family: var(--font-family);
-    font-size: 1rem;
-}
-
-.contact-form textarea {
-    resize: vertical;
+    border-radius: 4px;
+    font-size: 0.9rem;
 }
 
 .contact-form button {
     align-self: flex-start;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 /* ======================== */
@@ -299,9 +283,8 @@ section {
 /* ======================== */
 footer {
     background-color: var(--color-text-dark);
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     color: var(--color-text-light);
-    text-align: center;
 }
 
 .footer-content {
@@ -310,34 +293,51 @@ footer {
     align-items: center;
 }
 
-.footer-content p {
-    font-size: 0.9rem;
-    color: #bbb;
-}
-
 .social-links a {
-    color: var(--color-text-light);
-    font-size: 1.5rem;
-    margin-left: 1rem;
+    color: var(--color-bg-white);
 }
-
 .social-links a:hover {
     color: var(--color-primary);
 }
 
 
 /* ======================== */
-/* Responsiveness (Mobile) */
+/* Responsiveness */
 /* ======================== */
 @media screen and (max-width: 992px) {
-    .hero-content {
-        flex-direction: column;
+    .main-wrapper {
+        box-shadow: none;
+    }
+    body {
+        padding: 0;
+    }
+    
+    .hero-section {
         min-height: auto;
     }
     
+    .hero-content {
+        flex-direction: column;
+    }
+    
+    /* Navigasi disatukan di mobile */
+    .hero-section nav {
+        position: static;
+        transform: none;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .hero-section nav .nav-links {
+        margin: 0;
+        gap: 1rem;
+    }
+
     /* Teks dan Tombol */
     .hero-text {
-        order: 2; /* Pindah teks ke bawah */
+        order: 2; 
         padding: 4rem 1.5rem;
         text-align: center;
         align-items: center;
@@ -346,18 +346,20 @@ footer {
     .hero-text h2 {
         font-size: 2.5rem;
     }
-
     .description {
-        text-align: center;
         max-width: 100%;
+    }
+    .hero-buttons {
+        justify-content: center;
     }
 
     /* Gambar dan Bentuk Organik */
     .hero-image-container {
-        order: 1; /* Pindah gambar ke atas */
+        order: 1; 
         min-height: 400px;
         background-color: var(--color-primary);
-        padding: 3rem 1.5rem 0;
+        padding: 2rem 0;
+        justify-content: center;
     }
     
     .organic-shape {
@@ -365,29 +367,13 @@ footer {
     }
 
     .hero-image {
-        max-width: 300px;
-        transform: translateY(0);
+        max-width: 70%;
+        transform: none;
     }
     
-    /* Footer */
     .footer-content {
         flex-direction: column;
         gap: 1rem;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .hero-text h2 {
-        font-size: 2rem;
-    }
-    .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-    .btn {
-        width: 100%;
-    }
-    .nav-links {
-        display: none; /* Sembunyikan link nav pada mobile sangat kecil */
+        text-align: center;
     }
 }
