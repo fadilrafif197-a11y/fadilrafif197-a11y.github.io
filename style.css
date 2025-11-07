@@ -73,9 +73,9 @@ section {
     display: flex;
     flex-direction: column;
     background-image: url(images.jpg);
-    max-width: 100%;
-    height: auto;
-    display: block;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* --- Navigation Bar (Penempatan Persis di Template) --- */
