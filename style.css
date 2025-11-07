@@ -193,15 +193,14 @@ section {
 }
 
 .hero-image {
-    width: 100%;
-    max-width: 450px; 
+    width: 80%;
+    max-width: 350px;
     height: auto;
     object-fit: cover;
-    z-index: 10; 
-    border-radius: 5px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    /* Penyesuaian posisi agar gambar berada di area kuning */
-    transform: translate(-10%, 15%); 
+    z-index: 2; /* Pastikan foto di depan background */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
 
 /* Penempatan navigasi di sisi kanan area kuning */
