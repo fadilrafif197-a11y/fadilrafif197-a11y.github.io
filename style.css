@@ -72,10 +72,6 @@ section {
     background-color: var(--color-bg-white);
     display: flex;
     flex-direction: column;
-    background-image: url(images.jpg);
-    background-size: cover; 
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 /* --- Navigation Bar (Penempatan Persis di Template) --- */
@@ -174,13 +170,13 @@ section {
 
 /* --- Right Side (Image & Shape) --- */
 .hero-image-container {
-    flex: 40; /* Mengambil 40% ruang */
+    flex: 40;
     position: relative;
-    background-color: var(--color-primary);
-    overflow: hidden;
+    background: url('images.jpg') center/cover no-repeat;
     display: flex;
-    justify-content: flex-start; /* Gambar agak ke kiri */
+    justify-content: center;
     align-items: center;
+    padding-right: 100px; 
 }
 
 .organic-shape {
