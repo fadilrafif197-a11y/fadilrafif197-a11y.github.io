@@ -172,11 +172,13 @@ section {
 .hero-image-container {
     flex: 40;
     position: relative;
-    background: url('images.jpg') center/cover no-repeat;
+    background-image: url('images.jpg');
+    background-size: cover;
+    background-position: center top; /* Gambar di bagian atas */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 100px; 
+    padding: 3rem 0;
 }
 
 .organic-shape {
